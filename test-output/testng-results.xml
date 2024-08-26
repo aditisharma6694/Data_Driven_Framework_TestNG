@@ -1,72 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-08-26T16:51:48 IST" name="Default suite" finished-at="2024-08-26T16:52:01 IST" duration-ms="13753">
+  <suite started-at="2024-08-26T21:10:28 IST" name="Default suite" finished-at="2024-08-26T21:10:41 IST" duration-ms="13015">
     <groups>
     </groups>
-    <test started-at="2024-08-26T16:51:48 IST" name="Default test" finished-at="2024-08-26T16:52:01 IST" duration-ms="13753">
+    <test started-at="2024-08-26T21:10:28 IST" name="Default test" finished-at="2024-08-26T21:10:41 IST" duration-ms="13015">
       <class name="tests.Login">
-        <test-method signature="testLogin(java.lang.String,java.lang.String)[pri:0, instance:tests.Login@cc43f62]" started-at="2024-08-26T16:51:48 IST" name="testLogin" data-provider="dataProvider" finished-at="2024-08-26T16:51:53 IST" duration-ms="5011" status="PASS">
+        <test-method signature="testLogin(java.util.HashMap)[pri:0, instance:tests.Login@53fb3dab]" started-at="2024-08-26T21:10:29 IST" name="testLogin" data-provider="dataSupplier" finished-at="2024-08-26T21:10:34 IST" duration-ms="5030" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[amotooricap9@gmail.com]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[12345]]>
+                <![CDATA[{Runmode=Y, ExpectedResult=Success, Username=amotooricapbat612@gmail.com, Browser=Chrome, Password=abcdefgh}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testLogin -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:tests.Login@cc43f62]" started-at="2024-08-26T16:51:53 IST" name="teardown" finished-at="2024-08-26T16:51:53 IST" duration-ms="176" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.Login@53fb3dab]" started-at="2024-08-26T21:10:34 IST" name="tearDown" finished-at="2024-08-26T21:10:34 IST" duration-ms="170" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- teardown -->
-        <test-method signature="testLogin(java.lang.String,java.lang.String)[pri:0, instance:tests.Login@cc43f62]" started-at="2024-08-26T16:51:53 IST" name="testLogin" data-provider="dataProvider" finished-at="2024-08-26T16:51:57 IST" duration-ms="3989" status="PASS">
+        </test-method> <!-- tearDown -->
+        <test-method signature="testLogin(java.util.HashMap)[pri:0, instance:tests.Login@53fb3dab]" started-at="2024-08-26T21:10:34 IST" name="testLogin" data-provider="dataSupplier" finished-at="2024-08-26T21:10:40 IST" duration-ms="5849" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[amotooricap1@gmail.com]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[12345]]>
+                <![CDATA[{Runmode=Y, ExpectedResult=Success, Username=amotooricapbat63@gmail.com, Browser=Edge, Password=abcde}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testLogin -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:tests.Login@cc43f62]" started-at="2024-08-26T16:51:57 IST" name="teardown" finished-at="2024-08-26T16:51:57 IST" duration-ms="172" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.Login@53fb3dab]" started-at="2024-08-26T21:10:40 IST" name="tearDown" finished-at="2024-08-26T21:10:41 IST" duration-ms="1593" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- teardown -->
-        <test-method signature="testLogin(java.lang.String,java.lang.String)[pri:0, instance:tests.Login@cc43f62]" started-at="2024-08-26T16:51:57 IST" name="testLogin" data-provider="dataProvider" finished-at="2024-08-26T16:52:01 IST" duration-ms="4175" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[amotooricap3@gmail.com]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[12345]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testLogin -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:tests.Login@cc43f62]" started-at="2024-08-26T16:52:01 IST" name="teardown" finished-at="2024-08-26T16:52:01 IST" duration-ms="186" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- teardown -->
+        </test-method> <!-- tearDown -->
       </class> <!-- tests.Login -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->

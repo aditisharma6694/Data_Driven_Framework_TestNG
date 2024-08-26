@@ -1,44 +1,88 @@
 package tests;
 
-import java.time.Duration;
+import java.io.IOException;
+import java.util.HashMap;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
-import org.testng.annotations.*;
-import io.github.bonigarcia.wdm.WebDriverManager;
+import org.testng.SkipException;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
 
-public class Login {
-	WebDriver driver;
+import base.Base;
+import pageobjects.AccountPage;
+import pageobjects.HomePage;
+import pageobjects.LoginPage;
+import util.DataUtil;
+import util.MyXLSReader;
+
+public class Login extends Base {
 	
-	@Test(dataProvider = "dataProvider")
-	public void testLogin(String email, String password) {
+	WebDriver driver;
+	MyXLSReader excelReader;
+	
+	@AfterMethod
+	public void tearDown() {
 		
-		WebDriverManager.chromedriver().setup();
-		driver = new ChromeDriver();
-		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
-		driver.get("http://tutorialsninja.com/demo");
-		driver.findElement(By.xpath("//span[text()='My Account']")).click();
-		driver.findElement(By.linkText("Login")).click();
-		driver.findElement(By.id("input-email")).sendKeys(email);	
-		driver.findElement(By.id("input-password")).sendKeys(password);	
-		driver.findElement(By.xpath("//input[@value='Login']")).click();
+		if(driver!=null) {	
+			driver.quit();
+		}
 		
-		Assert.assertTrue(driver.findElement(By.linkText("Edit your account information")).isDisplayed());	
+	}
+	
+	@Test(dataProvider="dataSupplier")
+	public void testLogin(HashMap<String,String> hMap) throws IOException {
+		
+		if(!DataUtil.isRunnable(excelReader, "LoginTest", "Testcases") || hMap.get("Runmode").equals("N")) {
+			
+			throw new SkipException("Skipping the test as the runmode is set to N");
+			
+		}
+		
+		driver = openBrowser(hMap.get("Browser"));
+        HomePage homePage = new HomePage(driver);
+        homePage.clickOnMyAccountDropMenu();
+        LoginPage loginPage = homePage.selectLoginOption();
+		loginPage.enterEmailAddress(hMap.get("Username"));
+		loginPage.enterPassword(hMap.get("Password"));
+		AccountPage accountPage = loginPage.clickOnLoginButton();
+		
+		String expectedResult = hMap.get("ExpectedResult");
+		
+		boolean expectedConvertedResult = false;
+		
+		if(expectedResult.equalsIgnoreCase("Failure")) {
+			
+			expectedConvertedResult = false;
+			
+		}else if(expectedResult.equalsIgnoreCase("Success")){
+			
+			expectedConvertedResult = true;
+		}
+		
+		Assert.assertEquals(accountPage.verifyLoginStatusOfUser(),expectedConvertedResult);
+	
 	}
 	
 	@DataProvider
-	public Object[][] dataProvider() {
-		Object[][] data = {{"amotooricap9@gmail.com","12345"},
-						{"amotooricap1@gmail.com","12345"},
-						{"amotooricap3@gmail.com","12345"}};
-		return data;
+	public Object[][] dataSupplier() {
+		
+		Object[][] obj = null;
+		
+		try {
+			//src\\test\\resources\\TutorialsNinja.xlsx
+			excelReader = new MyXLSReader("D:\\SDET\\Java-Selenium-TestNG\\Code_Practice\\SDET_QA\\FinalDataDrivenFramework_QAFox\\src\\test\\resources\\TutorialsNinja.xlsx");
+			obj = DataUtil.getTestData(excelReader, "LoginTest", "Data");
+		
+		}catch(Exception e) {
+			
+			e.printStackTrace();
+			
+		}
+		
+		return obj;
+		
 	}
-	
-	@AfterMethod
-	public void teardown() {
-		driver.quit();
-	}
+
 }

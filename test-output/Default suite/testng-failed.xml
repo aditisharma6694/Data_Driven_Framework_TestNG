@@ -5,8 +5,8 @@
     <classes>
       <class name="tests.Login">
         <methods>
-          <include name="teardown"/>
-          <include name="testLogin"/>
+          <include name="tearDown"/>
+          <include name="testLogin" invocation-numbers="1"/>
         </methods>
       </class> <!-- tests.Login -->
     </classes>
