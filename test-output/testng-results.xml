@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2024-08-26T16:51:48 IST" name="Default suite" finished-at="2024-08-26T16:52:01 IST" duration-ms="13753">
+    <groups>
+    </groups>
+    <test started-at="2024-08-26T16:51:48 IST" name="Default test" finished-at="2024-08-26T16:52:01 IST" duration-ms="13753">
+      <class name="tests.Login">
+        <test-method signature="testLogin(java.lang.String,java.lang.String)[pri:0, instance:tests.Login@cc43f62]" started-at="2024-08-26T16:51:48 IST" name="testLogin" data-provider="dataProvider" finished-at="2024-08-26T16:51:53 IST" duration-ms="5011" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[amotooricap9@gmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[12345]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLogin -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:tests.Login@cc43f62]" started-at="2024-08-26T16:51:53 IST" name="teardown" finished-at="2024-08-26T16:51:53 IST" duration-ms="176" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+        <test-method signature="testLogin(java.lang.String,java.lang.String)[pri:0, instance:tests.Login@cc43f62]" started-at="2024-08-26T16:51:53 IST" name="testLogin" data-provider="dataProvider" finished-at="2024-08-26T16:51:57 IST" duration-ms="3989" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[amotooricap1@gmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[12345]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLogin -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:tests.Login@cc43f62]" started-at="2024-08-26T16:51:57 IST" name="teardown" finished-at="2024-08-26T16:51:57 IST" duration-ms="172" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+        <test-method signature="testLogin(java.lang.String,java.lang.String)[pri:0, instance:tests.Login@cc43f62]" started-at="2024-08-26T16:51:57 IST" name="testLogin" data-provider="dataProvider" finished-at="2024-08-26T16:52:01 IST" duration-ms="4175" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[amotooricap3@gmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[12345]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLogin -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:tests.Login@cc43f62]" started-at="2024-08-26T16:52:01 IST" name="teardown" finished-at="2024-08-26T16:52:01 IST" duration-ms="186" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- tests.Login -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
